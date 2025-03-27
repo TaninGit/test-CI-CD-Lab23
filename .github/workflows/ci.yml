@@ -1,0 +1,20 @@
+name: Lab23 Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-lab23-and-test-lab23:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout source code
+        uses: actions/checkout@v3
+
+        - name: Lab23 Build 
+        run: echo "Build Lab23"
+
+        - name: Lab23 Test
+        run: echo "Test Lab32 hah Lab23"
