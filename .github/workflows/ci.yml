@@ -13,8 +13,11 @@ jobs:
         - name: Checkout source code
           uses: actions/checkout@v3
 
-        - name: Lab23 Build 
-          run: echo "Build Lab23"
+        - name: Set Docker Compose up 
+          run: docker compose up -d
 
-        - name: Lab23 Test
-          run: echo "Test Lab32 hah Lab23"
+        - name: Run test inside web container
+          run: docker compose exec -it web curl http://localhost:5000/api/users
+
+        - name: Shutdown Docker Compose
+          run: docker compose down -v
